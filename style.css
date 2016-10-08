@@ -1,0 +1,47 @@
+
+
+#tree-container{
+    width: 100%;
+    height: 500px;
+    background-color: skyblue;
+    overflow: hidden;
+    position: relative;
+    
+}
+
+
+
+.tree-base{
+    background-color: saddlebrown;
+    height: 100px;
+    width: 100px;
+    position:absolute;
+    bottom: 25px;
+    left: 7px;
+}
+
+.grass{
+    width: 100%;
+    background-color: darkolivegreen;
+    height: 50px;
+    position: absolute;
+    bottom: 0px;
+}
+
+
+
+.tree-top {
+    width: 200px;
+    height: 300px;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-bottom: 200px solid green;
+    position: absolute;
+    left: -100px;
+    bottom: -100px;
+}
+
+#garden-menu{
+    background-color: beige;
+    height: 50px;
+}
