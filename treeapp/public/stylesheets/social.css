@@ -134,3 +134,6 @@ input::-webkit-input-placeholder {
     overflow-y:scroll;
 	-webkit-overflow-scrolling: touch;
 }
+._10b4{
+	-webkit-overflow-scrolling: touch;
+}
