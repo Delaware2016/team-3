@@ -57,7 +57,8 @@ passport.use(new FacebookStrategy({
   },
   function(accessToken, refreshToken, profile, done) {
     console.log(profile);
-    connection.query('INSERT INTO users (username) VALUES (\''+profile.displayName+'\')');
+    //merge statement?
+    connection.query('INSERT IGNORE INTO users (username) VALUES (\''+profile.displayName+'\')');
     connection.query('SELECT * FROM users WHERE username=\''+profile.displayName+'\';',function(err, results){
       if(err)console.log(err);
       done(null,results);

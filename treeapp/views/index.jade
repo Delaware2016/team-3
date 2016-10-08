@@ -1,5 +1,18 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  #tree-container
+    .grass
+    .tree-base
+  // TREE CONTAINER END
+  #garden-menu
+    a(href='link to advocacy')
+      #advocacy
+        img(src='/images/bird.png')
+    a(href='link to volunteer')
+      #volunteer
+        img(src='/images/watering-can.png')
+    a(href='link to donate')
+      #donate
+        img(src='/images/soil.jpg')
+  script(src='/javascripts/script.js')
