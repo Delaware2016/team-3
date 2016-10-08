@@ -41,5 +41,6 @@ block content
             img(src='/images/profile.jpg')
         span#profile-name= user.username
         span#profile-points= user.points
+  script var points = #{user.points}
   script(src='/javascripts/script.js')
   script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', integrity='sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa', crossorigin='anonymous')

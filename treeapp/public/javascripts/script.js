@@ -197,7 +197,7 @@ var create_fruit_list = function(number_fruit, tree, tree_base_height){
 
 //Tree object  | Tree(height)
 // enter height for layers of tree
-var mytree = new Tree(8); 
+var mytree = new Tree(points); 
 
 
 
