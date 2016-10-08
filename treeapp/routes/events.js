@@ -10,7 +10,10 @@ var connection = mysql.createConnection({
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  if(!req.user)res.end('not authorized')
+  if(!req.user){
+      res.end('not authorized')
+      return;
+  }
   connection.query("SELECT * FROM events;",function(err,results){
       if(err)res.end('err');
       res.send(results);
@@ -38,8 +41,10 @@ router.post('/',function(req,res,next){
 
     // Using callback
     geocoder.geocode(location, function(err, res) {
-        console.log(res);
+        res[0].latitude;
+        res[0].longitude;
     });
+    // connection.query('INSERT INTO events (full_location, point, description, date) VALUES ('++');')
 })
 
 router.get('/add',function(req,res,next){
