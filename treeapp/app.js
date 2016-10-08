@@ -4,9 +4,17 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var mysql = require('mysql');
+var connection = mysql.createConnection({
+    host: 'ec2-54-210-156-211.compute-1.amazonaws.com',
+    user : 'cfg',
+    password : process.env.PW,
+    database : 'cfg'
+});
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var login = require('./routes/login');
 
 var app = express();
 
@@ -25,12 +33,47 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/users', users);
 
+app.get('/login', function(req, res, next) {
+  res.render('login');
+});
+var passport = require('passport')
+  , FacebookStrategy = require('passport-facebook').Strategy;
+
+passport.use(new FacebookStrategy({
+    clientID: "1590000834638958",
+    clientSecret: "577892f85d40c0c2f233b5568737f73a",
+    callbackURL: "http://ec2-54-210-156-211.compute-1.amazonaws.com/auth/facebook/callback"
+  },
+  function(accessToken, refreshToken, profile, done) {
+    User.findOrCreate(..., function(err, user) {
+      if (err) { return done(err); }
+      done(null, user);
+    });
+  }
+));
+// Redirect the user to Facebook for authentication.  When complete,
+// Facebook will redirect the user back to the application at
+//     /auth/facebook/callback
+app.get('/auth/facebook', passport.authenticate('facebook'));
+
+// Facebook will redirect the user to this URL after approval.  Finish the
+// authentication process by attempting to obtain an access token.  If
+// access was granted, the user will be logged in.  Otherwise,
+// authentication has failed.
+app.get('/auth/facebook/callback',
+  passport.authenticate('facebook', { successRedirect: '/',
+                                      failureRedirect: '/login' }));
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
   err.status = 404;
   next(err);
 });
+
+
+
+
 
 // error handlers
 
