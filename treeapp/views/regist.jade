@@ -1,0 +1,16 @@
+extends layout
+block content
+  
+    link(rel='stylesheet', type='text/css', href='../public/stylesheets/register.css')
+  .everything
+    img.myButton(src='http://198.100.47.134/images/uploads/logo2.png')
+    .Register
+      form(method='post', action='https://getform.org/f/70415a77-d632-4883-bf07-2e15d3f557da')
+        .create
+          span.fontawesome-user
+          input.inputs(type='text', required='', placeholder='Username', autocomplete='off')
+          span.fontawesome-envelope-alt
+          input#email(type='text', required='', placeholder='e-mail', autocomplete='off')
+          span.fontawesome-lock
+          input#password(type='password', name='password', required='', placeholder='password', autocomplete='off')
+        input(type='submit', value='Register', title='Register')
