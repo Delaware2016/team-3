@@ -98,7 +98,7 @@ body{
     background-color: beige;
   display:block;
     bottom: 0px;
-    text-align: center;
+    text-align: right;
     position:fixed;
     z-index: 1000;
 }
@@ -106,31 +106,39 @@ body{
 
 #garden-menu>#icon-container>a>div{
     
-    width: 15%;
+    width: 80px;
     display: inline-block;
-    padding: 20px;
-    padding-top: 10px;
     
+  
     
-
 }
+
+
+#garden-menu>#icon-container>a{
+    display: inline-block;
+    margin-right: 10px;
+    padding: 0px 10px;
+    
+}
+
+
 #garden-menu img{
   width: 100%;
 }
 
 #profile-bar{
     
-    height: 40px;
+    height: 50px;
     background-color: dodgerblue;
-    font-size: 3em;
+    font-size: 2em;
     color: white;
 }
     
 #shop-link{
     /*background-color: yellow;*/
     
-    width: 120px;
-    height: 120px;
+    width: 150px;
+    height: 150px;
     z-index: 0;
     position: fixed;
     top: 20px;
@@ -152,8 +160,8 @@ body{
 }
 
 #shop-link2{
-    width: 120px;
-    height: 120px;
+    width: 150px;
+    height: 150px;
     z-index: 4;
     position: fixed;
     top: 20px;
