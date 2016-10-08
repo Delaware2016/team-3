@@ -142,7 +142,7 @@ body{
 
     animation-iteration-count: infinite;
 
-    -webkit-animation-duration:5s; 
+    -webkit-animation-duration:1s; 
     -webkit-animation-timing-function: linear;
     
 }
