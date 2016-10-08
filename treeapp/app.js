@@ -42,6 +42,13 @@ app.use('/users', users);
 app.get('/login', function(req, res, next) {
   res.render('login');
 });
+passport.serializeUser(function(user, done) {
+  done(null, user);
+});
+
+passport.deserializeUser(function(user, done) {
+  done(null, user);
+});
 
 passport.use(new FacebookStrategy({
     clientID: "1590000834638958",
