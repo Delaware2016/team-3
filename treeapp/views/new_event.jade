@@ -3,13 +3,13 @@ extends layout
 block content
     form(name="add-estimation", action='/events' method="post")
         div.input
-            span.label Location
+            span Location
             input(type="text", name="location")
         div.input
-            span.label Description
+            span Description
             input(type="text", name="description")
         div.input
-            span.label Date
+            span Date
             input(type="date", name="date")
         div.actions
             input(type="submit", value="add")
