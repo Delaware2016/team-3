@@ -51,6 +51,7 @@ router.post('/',function(req,res,next){
         ');',function(err,results){
             if(err)console.log(err);
             console.log(results);
+            res.end('ok');
         })
     });
 })
