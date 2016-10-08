@@ -43,8 +43,16 @@ router.post('/',function(req,res,next){
     geocoder.geocode(location, function(err, res) {
         res[0].latitude;
         res[0].longitude;
+        connection.query("INSERT INTO events (full_location, point, description, date) VALUES ("+
+        "\'"+req.body.location+"\',"+
+        "ST_GeomFromText('POINT("+res[0].latitude+" "+res[0].longitude+")'),"+ //point
+        "\'"+req.body.description+"\'"+
+        "\'"+req.body.date+"\'"+
+        +');',function(err,results){
+            if(err)console.log(err);
+            console.log(results);
+        })
     });
-    // connection.query('INSERT INTO events (full_location, point, description, date) VALUES ('++');')
 })
 
 router.get('/add',function(req,res,next){
