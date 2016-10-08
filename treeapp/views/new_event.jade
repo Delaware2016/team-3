@@ -1,0 +1,9 @@
+extends layout
+
+block content
+    form(name="add-estimation", method="post")
+        div.input
+            span.label Description
+            input(type="text", name="title")
+        div.actions
+            input(type="submit", value="add")

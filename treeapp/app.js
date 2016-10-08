@@ -17,6 +17,7 @@ var passport = require('passport')
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var login = require('./routes/login');
+var events = require('./routes/events');
 var session = require('express-session');
 
 var app = express();
@@ -37,7 +38,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use('/', routes);
-app.use('/users', users);
+app.use('/events', events);
 
 app.get('/login', function(req, res, next) {
   res.render('login');
@@ -46,6 +47,10 @@ app.get('/login', function(req, res, next) {
 app.get('/register', function(req,res,next){
   res.render('regist');
 })
+
+app.get('/social', function(req,res,next){
+  res.render('social');
+});
 
 passport.serializeUser(function(user, done) {
   done(null, user);
