@@ -1,0 +1,18 @@
+extends layout
+
+block content
+    //- link(rel='stylesheet', type='text/css', href='css/track2d.css')
+    script(src='javasript/data.js')
+    script(src='javascripts/content.js')
+    script(src='http://www.google.com/jsapi')
+    script(type='text/javascript').
+        google.load("jquery", "1");
+    script(type='text/javascript').
+        google.load("maps", "3", {other_params: "sensor=false"});
+    script(src='javascripts/raphaelboth.js')
+    script(src='javascripts/cloudoverlay.js')
+    script(src='javascripts/googMapsStyle.js')
+    script(src='javascripts/geolocation-marker.js')
+    script(src='javascripts/volunteer.js')
+    input(type='button', value='Next', onclick='nextMarker()')
+    #map_canvas(style='width:500px; height:600px;')
