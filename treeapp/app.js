@@ -68,21 +68,21 @@ app.get('/donate',function(req,res,next){
     connection.query('UPDATE users SET points = points+'+1+' WHERE username=\''+req.user[0].username+'\';',
     function(err,results){
       if(err)res.end('not ok');
-      res.end('ok');
+      res.redirect('/');
     });
   } else if(req.query.two){
     //twenty points
     connection.query('UPDATE users SET points = points+'+2+' WHERE username=\''+req.user[0].username+'\';',
     function(err,results){
       if(err)res.end('not ok');
-      res.end('ok');
+      res.redirect('/');
     });
   } else if(req.query.three){
     //thirty points
     connection.query('UPDATE users SET points = points+'+5+' WHERE username=\''+req.user[0].username+'\';',
     function(err,results){
       if(err)res.end('not ok');
-      res.end('ok');
+      res.redirect('/');
     });
   } else if(req.query.variable_input){
     //variable_input/10
@@ -90,7 +90,7 @@ app.get('/donate',function(req,res,next){
     connection.query('UPDATE users SET points = points+'+incr+' WHERE username=\''+req.user[0].username+'\';',
     function(err,results){
       if(err)res.end('not ok');
-      res.end('ok');
+      res.redirect('/');
     });
   }
 })
