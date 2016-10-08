@@ -1,7 +1,7 @@
 extends layout
 
 block content
-    form(name="add-event", method="post")
+    form(name="add-estimation", action='/events' method="post")
         div.input
             span.label Location
             input(type="text", name="location")
@@ -12,4 +12,4 @@ block content
             span.label Date
             input(type="date", name="date")
         div.actions
-            input(type="submit", value="/events")
+            input(type="submit", value="add")
