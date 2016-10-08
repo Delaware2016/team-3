@@ -1,0 +1,42 @@
+head
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', type='text/css', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    // Website CSS style
+    link(rel='stylesheet', type='text/css', href='stylesheets/register.css')
+    // Website Font style
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css')
+    // Google Fonts
+    link(href='https://fonts.googleapis.com/css?family=Passion+One', rel='stylesheet', type='text/css')
+    link(href='https://fonts.googleapis.com/css?family=Oxygen', rel='stylesheet', type='text/css')
+    title Admin
+    #fb-root
+    .container
+      .row.main
+        .panel-heading
+          .panel-title.text-center(onclick="location.href='tree.jade';")
+            img.tree(src='images/tree.png')
+        .main-login.main-center
+          a#butt1.btn.btn-block.btn-social.btn-facebook(href='#', onclick="showStuff('facebook', 'twitter', 'butt2', this); return false;")
+            span.fa.fa-facebook
+            |  Switch to Facebook
+          a#butt2.btn.btn-block.btn-social.btn-twitter(style='display:none', href='#', onclick="showStuff('twitter', 'facebook', 'butt1', this); return false;")
+            span.fa.fa-twitter
+            |  Switch to Twitter
+          .socialnetwork
+            #facebook(style='display:none')
+              iframe(src='https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FUnitedWayofDelaware%2F&tabs=timeline&width=300&height=499&small_header=true&adapt_container_width=true&hide_cover=true&show_facepile=false&appId=1050728888359638', width='300', height='499', style='border:none;overflow:hidden', scrolling='no', frameborder='0', allowtransparency='true')
+            #twitter.pre-scrollable
+              a.twitter-timeline(href='https://twitter.com/UnitedWayDE') Tweets by @UnitedWayDE
+              script.
+                !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?"http":"https";if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+    script(type='text/javascript').
+      function showStuff(id, id2, id3, btn) {
+      document.getElementById(id).style.display = 'block';
+      // hide the lorem ipsum text
+      document.getElementById(id2).style.display = 'none';
+      // hide the link
+      btn.style.display = 'none';
+      document.getElementById(id3).style.display = 'block';
+      }
