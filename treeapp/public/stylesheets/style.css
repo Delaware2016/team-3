@@ -34,7 +34,7 @@ body{
 .tree-base{
     background-color: saddlebrown;
     height: 100px;
-    width: 20%;
+    width: 100px;
     position:absolute;
     bottom: 25px;
     left: 7px;
@@ -53,12 +53,16 @@ body{
 .tree-top {
     width: 50%;/*200px;*/
     height: 50%; /*300px;*/
-    border-left: 160px solid transparent;
+/*    border-left: 160px solid transparent;
     border-right: 160px solid transparent;
-    border-bottom: 220px solid green;
+    border-bottom: 220px solid green;*/
     position: absolute;
     left: -100px;
     bottom: -100px;
+    background-image: url(../images/treepart.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 
@@ -120,8 +124,8 @@ body{
 #shop-link{
     /*background-color: yellow;*/
     
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
     z-index: 0;
     position: fixed;
     top: 50px;
@@ -142,14 +146,14 @@ body{
 }
 
 #shop-link2{
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
     z-index: 4;
     position: fixed;
     top: 50px;
     right: 50px;
     text-align: center;
-    line-height: 160px;
+    line-height: 100px;
 
 }
 
@@ -166,4 +170,9 @@ body{
     }
 }
 
+
+
+@media (min-width: 700px){
+    
+}
 

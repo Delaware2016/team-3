@@ -80,7 +80,12 @@ function jump_menu(h){
 //draw tree
 //but really just a single tree layer
 var draw_tree = function(height){
+    
+    if($(window).width() > 600){ //not used
 
+   
+    }
+    
     $singletreetrunk.style.left = ($contain_width - $tree_bod_width) + 'px';
 
     var $tree_top = document.createElement('div'); //creates tree layer triangle
