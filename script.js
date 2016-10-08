@@ -31,6 +31,11 @@ var Tree = function(height){ //Tree class with height that changes height/adds l
 //FUNCTIONS
 
 
+//CHANGE CONTAINER SIZE
+var grow_container = function(tree){
+    //$('#tree-container').height
+}
+
 //MAKE TREE
 //loops to make each layer of tree
 var make_tree = function(tree){

@@ -48,14 +48,14 @@
 
 #garden-menu{
     background-color: beige;
-    height: 50px;
+   
     text-align: center;
 }
 
 
 #garden-menu>a>div{
     
-    width: 50px;
+    width: 25%;
     display: inline-block;
     padding: 10px;
 }
