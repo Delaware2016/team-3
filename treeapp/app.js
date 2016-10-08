@@ -54,6 +54,9 @@ app.get('/volunteer',function(req,res,next){
 app.get('/social', function(req,res,next){
   res.render('social');
 });
+app.get('/donations', function(req,res,next){
+  res.render('donations');
+})
 
 app.post('/addPoints', function(req,res,next){
   console.log(req.user);
