@@ -156,7 +156,7 @@ var draw_fruit = function(fruit){
 
 var create_fruit_list = function(number_fruit, tree, tree_base_height){
     var tree_left_bound = ($contain_width - 250); //$tree_bod_width*2
-    var tree_right_bound = ($contain_width + 200); // for leeway because dont want to effort //$tree_bod_width
+    var tree_right_bound = ($contain_width ); // for leeway because dont want to effort //$tree_bod_width
     
     
     console.log($tree_bod_width);
