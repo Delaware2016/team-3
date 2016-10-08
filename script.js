@@ -16,10 +16,9 @@ var $contain_width = ($('#tree-container').width())/2;
 var $tree_bod_width= $('.tree-base').width()/2;
 
 
-var $tree_top = document.createElement('div'); //creates tree layer triangle
-$tree_top.className = 'tree-top';
 
-$tree_container.appendChild($tree_top);
+
+
 
 //CLASSES
 
@@ -42,15 +41,26 @@ var make_tree = function(tree){
 
 //DRAW FUNCTIONS
 
-var draw_tree = function(){
+var draw_tree = function(height){
+    
     $singletreetrunk.style.left = ($contain_width - $tree_bod_width) + 'px';
-    $tree_top.style.left = ($contain_width - $tree_bod_width - $tree_bod_width)+ 'px';
-    $tree_top.style.bottom = '100px';
     
     var $tree_top = document.createElement('div'); //creates tree layer triangle
     $tree_top.className = 'tree-top';
+  
+  
+    
+    $tree_top.style.left = ($contain_width - $tree_bod_width - $tree_bod_width)+ 'px';               
+    
+    $tree_top.style.bottom = '100px';
+    
+    
+  
 
     $tree_container.appendChild($tree_top);
+    
+    console.log($tree_bod_width);
+    //console.log()
 }
 
 
@@ -59,11 +69,14 @@ var draw_tree = function(){
 document.addEventListener("DOMContentLoaded", function(event) { 
    
     //make_tree(tree_height);
-    //draw_tree();
+    draw_tree();
     
-    $singletreetrunk.style.left = ($contain_width - $tree_bod_width) + 'px';
+/*    $singletreetrunk.style.left = ($contain_width - $tree_bod_width) + 'px';
     $tree_top.style.left = ($contain_width - $tree_bod_width - $tree_bod_width)+ 'px';
-    $tree_top.style.bottom = '100px';
+    $tree_top.style.bottom = '100px';*/
+    
+    var xx = $('.tree-top').position();
+    console.log(xx);
   
    
 });

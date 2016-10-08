@@ -42,8 +42,8 @@
     border-right: 100px solid transparent;
     border-bottom: 200px solid green;
     position: absolute;
-    left: -100px;
-    bottom: -100px;
+    left: 100px;
+    bottom: 100px;
 }
 
 #garden-menu{
