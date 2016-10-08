@@ -4,17 +4,17 @@
 <meta http-equiv="content-type" content="text/html; charset=UTF-8"/> 
 <title>Volunteering Map</title> 
 <link rel="stylesheet" type="text/css" href="css/track2d.css" /> 
-<script src="js/data.js"></script> 
-<script src="js/content.js"></script>
+<script src="treeapp/public/javascripts/data.js"></script> 
+<script src="treeapp/public/javascripts/content.js"></script>
 <script src="http://www.google.com/jsapi"></script> 
 <script type="text/javascript">google.load("jquery", "1");</script> 
 <script type="text/javascript"> 
 google.load("maps", "3", {other_params:"sensor=false"});
 </script> 
-<script src="js/raphaelboth.js"></script> 
-<script src="js/cloudoverlay.js"></script>
-<script src="js/googMapsStyle.js"></script>
-<script src="js/geolocation-marker.js"></script>
+<script src="treeapp/public/javascripts/raphaelboth.js"></script> 
+<script src="treeapp/public/javascripts/cloudoverlay.js"></script>
+<script src="treeapp/public/javascripts/googMapsStyle.js"></script>
+<script src="treeapp/public/javascripts/geolocation-marker.js"></script>
 <script>
 var map, cloud;
 var map;
@@ -64,10 +64,9 @@ function extrapolateLoc() {
       } else {
         if (markers[i].getAnimation() !== null) {
           toggleBounceOff(i);
-        }
       }
+    }
   }
-
 }
 
 function centerMap() {
