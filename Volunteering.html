@@ -10,6 +10,7 @@
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDPrjvAY50tdy_GRG-zxkfF-uo17RgAsSo"></script>
 
+
 <script src="treeapp/public/javascripts/data.js"></script> 
 
 <script src="treeapp/public/javascripts/content.js"></script>
@@ -134,17 +135,28 @@ function nextMarker() {
 
 
 function makeMarker(location) {
+
   
+
   var image = 'http://ec2-54-210-156-211.compute-1.amazonaws.com:3000/images/pin.png';
+
   var markerOptions = {icon: image,
+
       animation: google.maps.Animation.DROP,
+
       map: map, 
+
       position: new google.maps.LatLng(location.lat, location.lng)
+
     };
+
   
+
   var marker = new google.maps.Marker(markerOptions);
-  marker.addListener('click', toggleInfo);
+
+    marker.addListener('click', toggleInfo);
   markers.push(marker);
+
 }
 
 
