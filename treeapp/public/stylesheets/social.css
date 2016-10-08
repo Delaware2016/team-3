@@ -130,3 +130,6 @@ input::-webkit-input-placeholder {
 .socialnetwork{
     margin-top: 1em;
 }
+#twitter{
+    overflow-y:auto;
+}
