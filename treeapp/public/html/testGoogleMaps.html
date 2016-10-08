@@ -18,12 +18,17 @@
   <body>
     <div id="map"></div>
     <script>
-
+    var map; 
       function initMap() {
-        var myLatLng = {lat: -25.363, lng: 131.044};
+          infowindow = new google.maps.InfoWindow({
+          content: contentString
+        });
+        var myLatLng = {lat: 39.783229999999996, lng: -75.54888319999999};
 
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 4,
+        map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 16,
+          mapTypeID: 'roadmap',
+          styles: googMapsStyle,
           center: myLatLng
         });
 
@@ -37,5 +42,14 @@
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDPrjvAY50tdy_GRG-zxkfF-uo17RgAsSo&callback=initMap">
     </script>
+    <script type="text/javascript"> 
+google.load("maps", "3", {other_params:"sensor=false"});
+</script>
+<script src="treeapp/public/javascripts/data.js"></script> 
+<script src="treeapp/public/javascripts/content.js"></script>
+<script src="treeapp/public/javascripts/raphaelboth.js"></script> 
+<script src="treeapp/public/javascripts/cloudoverlay.js"></script>
+<script src="treeapp/public/javascripts/googMapsStyle.js"></script>
+<script src="treeapp/public/javascripts/geolocation-marker.js"></script>
   </body>
 </html>
