@@ -1,6 +1,8 @@
 
 
-
+body{
+    font-size: 3em;
+}
 /*--TREE CANVAS THING ---*/
 
 #tree-container{
@@ -91,6 +93,7 @@
     bottom: 0px;
     text-align: center;
     position:fixed;
+    z-index: 1000;
 }
 
 
@@ -117,9 +120,9 @@
 #shop-link{
     /*background-color: yellow;*/
     
-    width: 100px;
-    height: 100px;
-    z-index: 3;
+    width: 150px;
+    height: 150px;
+    z-index: 0;
     position: fixed;
     top: 50px;
     right: 50px;
@@ -135,17 +138,18 @@
 
     -webkit-animation-duration:5s; 
     -webkit-animation-timing-function: linear;
+    
 }
 
 #shop-link2{
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     z-index: 4;
     position: fixed;
     top: 50px;
     right: 50px;
     text-align: center;
-    line-height: 100px;
+    line-height: 160px;
 
 }
 
