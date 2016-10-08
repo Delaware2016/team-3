@@ -42,7 +42,7 @@ var passport = require('passport')
 passport.use(new FacebookStrategy({
     clientID: "1590000834638958",
     clientSecret: "577892f85d40c0c2f233b5568737f73a",
-    callbackURL: "http://ec2-54-210-156-211.compute-1.amazonaws.com/auth/facebook/callback"
+    callbackURL: "http://ec2-54-210-156-211.compute-1.amazonaws.com:3000/auth/facebook/callback"
   },
   function(accessToken, refreshToken, profile, done) {
     console.log(profile);
