@@ -5,7 +5,7 @@ var infowindow;
 var GeoMarker;
 var closeMarkers = [];
 
-function init() {
+function initMap() {
   infowindow = new google.maps.InfoWindow({
           content: contentString
         });
