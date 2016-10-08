@@ -61,6 +61,7 @@ app.get('/donations', function(req,res,next){
 })
 
 app.get('/donate',function(req,res,next){
+  console.log(req.query);
   if(req.query.one){
     //ten points
     connection.query('UPDATE users SET points = points+'+10+' WHERE username=\''+req.user+'\';',
