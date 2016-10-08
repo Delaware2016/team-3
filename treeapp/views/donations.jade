@@ -1,9 +1,9 @@
 form
-  link(rel='stylesheet', href='https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css')
+  //link(rel='stylesheet', href='https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css')
   link(rel='stylesheet', href='stylesheets/donations_style.css')
   script(src='https://code.jquery.com/jquery-1.11.3.min.js')
   script(src='https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js')
-
+  
   label
     | $5 can provide one book
     img.icon(src='images/book.png', alt='book icon')
@@ -42,15 +42,15 @@ form
     input#submit_button(type='submit', value='submit')
 script.
   function expandInput(){
-  if(document.getElementById("other").checked){
-  document.getElementById("number_div").style.display = "initial";
-  document.getElementById("variable_input").value = "";
-  document.getElementById("variable_amount_of_books").innerHTML = "";
-  }
-  else{
-  document.getElementById("number_div").style.display = "none";
-  }
-  document.getElementById("submit_button").setAttribute('disabled','false');
+    if(document.getElementById("other").checked){
+    document.getElementById("number_div").style.display = "initial";
+    document.getElementById("variable_input").value = "";
+    document.getElementById("variable_amount_of_books").innerHTML = "";
+    }
+    else{
+    document.getElementById("number_div").style.display = "none";
+    }
+    document.getElementById("submit_button").setAttribute('disabled','false');
   }
   var pref = "Your contribution can provide ";
   function onKeyUp(){
