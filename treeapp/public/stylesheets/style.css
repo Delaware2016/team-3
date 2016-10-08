@@ -1,6 +1,8 @@
 
 
-
+body{
+    font-size: 3em;
+}
 /*--TREE CANVAS THING ---*/
 
 #tree-container{
@@ -32,7 +34,7 @@
 .tree-base{
     background-color: saddlebrown;
     height: 100px;
-    width: 20%;
+    width: 100px;
     position:absolute;
     bottom: 25px;
     left: 7px;
@@ -51,12 +53,16 @@
 .tree-top {
     width: 50%;/*200px;*/
     height: 50%; /*300px;*/
-    border-left: 160px solid transparent;
+/*    border-left: 160px solid transparent;
     border-right: 160px solid transparent;
-    border-bottom: 220px solid green;
+    border-bottom: 220px solid green;*/
     position: absolute;
     left: -100px;
     bottom: -100px;
+    background-image: url(../images/treepart.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 
@@ -91,6 +97,7 @@
     bottom: 0px;
     text-align: center;
     position:fixed;
+    z-index: 1000;
 }
 
 
@@ -117,9 +124,9 @@
 #shop-link{
     /*background-color: yellow;*/
     
-    width: 100px;
-    height: 100px;
-    z-index: 3;
+    width: 120px;
+    height: 120px;
+    z-index: 0;
     position: fixed;
     top: 50px;
     right: 50px;
@@ -135,11 +142,12 @@
 
     -webkit-animation-duration:5s; 
     -webkit-animation-timing-function: linear;
+    
 }
 
 #shop-link2{
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     z-index: 4;
     position: fixed;
     top: 50px;
@@ -162,4 +170,9 @@
     }
 }
 
+
+
+@media (min-width: 700px){
+    
+}
 

@@ -80,7 +80,12 @@ function jump_menu(h){
 //draw tree
 //but really just a single tree layer
 var draw_tree = function(height){
+    
+    if($(window).width() > 600){ //not used
 
+   
+    }
+    
     $singletreetrunk.style.left = ($contain_width - $tree_bod_width) + 'px';
 
     var $tree_top = document.createElement('div'); //creates tree layer triangle
@@ -91,6 +96,7 @@ var draw_tree = function(height){
     $tree_top.style.left = ($contain_width - $tree_bod_width - $tree_bod_width - $tree_bod_width/2)+ 'px';   //maybe make better values someday...            
 
     $tree_top.style.bottom = height + 'px'; //height + px '100px'
+    $tree_top.style.zIndex= '3';
 
     $tree_container.appendChild($tree_top);
 
@@ -135,7 +141,8 @@ var draw_fruit = function(fruit){
     $tree_fruit.style.bottom =  fruit.bottom + 'px';
         
  
-    $tree_fruit.style.color = fruit.color;
+    $tree_fruit.style.backgroundColor = fruit.color;
+    console.log(fruit.color);
     
 
     $tree_container.appendChild($tree_fruit);
@@ -160,7 +167,7 @@ var create_fruit_list = function(number_fruit, tree, tree_base_height){
         
         var id = Math.floor((Math.random() * 10) + 1);
         var rchan_rand = Math.floor((Math.random() * 255) + 0);
-        var gchan_rand = Math.floor((Math.random() * 255) + 0);
+        var gchan_rand = Math.floor((Math.random() * 200) + 0);
         var bchan_rand = Math.floor((Math.random() * 255) + 0);
         var color = "rgb("+ rchan_rand +','+ gchan_rand +',' + bchan_rand + ')';
         
