@@ -6,7 +6,6 @@ form
 
   label
     | $5 can provide one book
-    // <!-- Originally from http://pngimg.com--!>
     img.icon(src='images/book.png', alt='book icon')
     div(align='right')
       | 100
@@ -40,7 +39,6 @@ form
       input#variable_input(type='number', name='variable_input', min='1', onkeyup='onKeyUp()')
     label#variable_amount_of_books
   center
-    // <!-- Insert post request to server--!>
     input#submit_button(type='submit', value='submit', disabled='true')
 script.
   function expandInput(){
