@@ -60,9 +60,46 @@ app.get('/donations', function(req,res,next){
   res.render('donations');
 })
 
+app.get('/donate',function(req,res,next){
+  if(req.query.one){
+    //ten points
+    connection.query('UPDATE users SET points = points+'+10+' WHERE username=\''+req.user+'\';',
+    function(err,results){
+      if(err)res.end('not ok');
+      res.end('ok');
+    });
+  } else if(req.query.two){
+    //twenty points
+    connection.query('UPDATE users SET points = points+'+20+' WHERE username=\''+req.user+'\';',
+    function(err,results){
+      if(err)res.end('not ok');
+      res.end('ok');
+    });
+  } else if(req.query.three){
+    //thirty points
+    connection.query('UPDATE users SET points = points+'+30+' WHERE username=\''+req.user+'\';',
+    function(err,results){
+      if(err)res.end('not ok');
+      res.end('ok');
+    });
+  } else if(req.query.variable_input){
+    //variable_input/10
+    var incr = Math.round(req.query.variable_input);
+    connection.query('UPDATE users SET points = points+'+incr+' WHERE username=\''+req.user+'\';',
+    function(err,results){
+      if(err)res.end('not ok');
+      res.end('ok');
+    });
+  }
+})
+
 app.post('/addPoints', function(req,res,next){
   console.log(req.user);
-  connection.query('UPDATE users SET points = points+'+req.body.points+' WHERE username=\''+req.user+'\';');
+  connection.query('UPDATE users SET points = points+'+req.body.points+' WHERE username=\''+req.user+'\';',
+  function(err,results){
+    if(err)res.end('not ok');
+    res.end('ok');
+  });
 });
 
 passport.serializeUser(function(user, done) {
