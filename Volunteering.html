@@ -83,14 +83,11 @@ function init() {
 
   }
 
-  var image = 'http://ec2-54-210-156-211.compute-1.amazonaws.com:3000/images/farmer.png';
+  var image = 'http://ec2-54-210-156-211.compute-1.amazonaws.com:3000/images/Farmer.png';
 
 
 
   var markerOptions = {icon: image,
-
-      animation: google.maps.Animation.DROP
-
     };
 
   GeoMarker = new GeolocationMarker(map, markerOptions);
@@ -111,9 +108,9 @@ function extrapolateLoc() {
 
   for (var i=0; i<markers.length; i++) {
 
-      if (!GeoMarker.getBounds().contains(markers[i].getPosition())) { // horribly inefficient. Really REALLY inefficient.
+      if (GeoMarker.getBounds().contains(markers[i].getPosition())) { // horribly inefficient. Really REALLY inefficient.
 
-              alert('LOLOLOLOL');
+              //alert('LOLOLOLOL');
 
       }
 
