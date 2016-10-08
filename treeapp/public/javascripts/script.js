@@ -162,7 +162,7 @@ var create_fruit_list = function(number_fruit, tree, tree_base_height){
     console.log($tree_bod_width);
     console.log($contain_width);
     var tree_top_bound = tree.height*100;
-    var tree_bot_bound = tree_base_height; //height + px '100px'
+    var tree_bot_bound = 200;//tree_base_height; //height + px '100px'
     
     
     
@@ -197,7 +197,7 @@ var create_fruit_list = function(number_fruit, tree, tree_base_height){
 
 //Tree object  | Tree(height)
 // enter height for layers of tree
-var mytree = new Tree(5); 
+var mytree = new Tree(8); 
 
 
 
