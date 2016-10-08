@@ -13,7 +13,7 @@ var $singletreetrunk = $treebodylist[0];
 
 
 var $contain_width = ($('#tree-container').width())/2;
-var $tree_bod_width= $('.tree-base').width()/2;
+var $tree_bod_width= $('.tree-top').width()/2;
 
 
 var fruit_arr = new Array();
@@ -155,8 +155,12 @@ var draw_fruit = function(fruit){
 //create fruit list. w hy did i do this
 
 var create_fruit_list = function(number_fruit, tree, tree_base_height){
-    var tree_left_bound = ($contain_width - $tree_bod_width - $tree_bod_width); 
-    var tree_right_bound = ($contain_width -$tree_bod_width); // for leeway because dont want to effort
+    var tree_left_bound = ($contain_width - 250); //$tree_bod_width*2
+    var tree_right_bound = ($contain_width + 200); // for leeway because dont want to effort //$tree_bod_width
+    
+    
+    console.log($tree_bod_width);
+    console.log($contain_width);
     var tree_top_bound = tree.height*100;
     var tree_bot_bound = tree_base_height; //height + px '100px'
     
