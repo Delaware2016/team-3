@@ -40,12 +40,12 @@ router.post('/',function(req,res,next){
     var date = req.body.description;
 
     // Using callback
-    geocoder.geocode(location, function(err, res) {
-        res[0].latitude;
-        res[0].longitude;
+    geocoder.geocode(location, function(err, resp) {
+        resp[0].latitude;
+        resp[0].longitude;
         connection.query("INSERT INTO events (full_location, point, description, date) VALUES ("+
         "\'"+req.body.location+"\',"+
-        "GeomFromText('POINT("+res[0].latitude+" "+res[0].longitude+")'),"+
+        "GeomFromText('POINT("+resp[0].latitude+" "+resp[0].longitude+")'),"+
         "\'"+req.body.description+"\',"+
         "\'"+req.body.date+"\'"+
         ');',function(err,results){
@@ -54,11 +54,11 @@ router.post('/',function(req,res,next){
             res.end('ok');
         })
     });
-})
+});
 
 router.get('/add',function(req,res,next){
     if(!req.user)res.end('not authorized');
     res.render('new_event');
-})
+});
 
 module.exports = router;
