@@ -27,6 +27,11 @@ var Tree = function(height){ //Tree class with height that changes height/adds l
 
 }
 
+var Fruit = function(type, id, color){
+    this.type = type;
+    this.id = id;
+}
+
 
 //FUNCTIONS
 
@@ -34,6 +39,8 @@ var Tree = function(height){ //Tree class with height that changes height/adds l
 //CHANGE CONTAINER SIZE //might not need
 var grow_container = function(tree){
     $('#tree-container').height(tree.height * 200); //150 is ration
+    
+ 
 }
 
 //MAKE TREE
@@ -48,7 +55,9 @@ var make_tree = function(tree){
 }
 
 
-//page function to jump to menu
+
+
+//page function to jump to menu -- BORROWED CODE, NOT NEED, DELETE
 function jump_menu(h){
 /*    var url = location.href;               
     location.href = "#"+h;                 
@@ -56,16 +65,16 @@ function jump_menu(h){
     console.log('zzzzzz');
     
     
-        var top = document.getElementById(h).offsetTop; //Getting Y of target element
-        window.scrollTo(0, top);                        //Go there directly or some transition
+        var top = document.getElementById(h).offsetTop; 
+        window.scrollTo(0, top);                        
     
 }
 
 //DRAW FUNCTIONS
 
 
-//DRAW TREE
-//creates a single tree layer
+//draw tree
+//but really just a single tree layer
 var draw_tree = function(height){
 
     $singletreetrunk.style.left = ($contain_width - $tree_bod_width) + 'px';
@@ -75,16 +84,34 @@ var draw_tree = function(height){
 
 
 
-    $tree_top.style.left = ($contain_width - $tree_bod_width - $tree_bod_width)+ 'px';               
+    $tree_top.style.left = ($contain_width - $tree_bod_width - $tree_bod_width - $tree_bod_width/2)+ 'px';   //maybe make better values someday...            
 
     $tree_top.style.bottom = height + 'px'; //height + px '100px'
 
-
-
     $tree_container.appendChild($tree_top);
 
-    //console.log($tree_bod_width);
 
+}
+
+//draw single fruit
+var draw_fruit = function(tree_base_height, tree){
+    
+    var $tree_fruit = document.createElement('div'); 
+    $tree_fruit.className = 'tree-fruit';
+    
+    
+
+    //($contain_width - $tree_bod_width - $tree_bod_width)+ 'px'; 
+    //($contain_width + $tree_bod_width + $tree_bod_width)+ 'px'; 
+
+    $tree_fruit.style.left = ($contain_width + $tree_bod_width + $tree_bod_width)+ 'px';               
+
+    $tree_fruit.style.bottom = tree.height*100 + 'px';
+        //tree_base_height + 'px'; //height + px '100px'
+    
+    Math.floor((Math.random() * 10) + 1);
+
+    $tree_container.appendChild($tree_fruit);
 }
 
 
@@ -100,16 +127,22 @@ var mytree = new Tree(5);
 document.addEventListener("DOMContentLoaded", function(event) { 
 
 
-    grow_container(mytree);
     
-    make_tree(mytree);
+    
+    make_tree(mytree); // make da tree
+    grow_container(mytree); //expands view when tree grows
+    
+    draw_fruit(100, mytree);
 
 
-
-    var xx = $('.tree-top').position(); // just for testing.
+    var xx = $('#tree-container').position(); // just for testing.
     console.log(xx);
+    var yy = $('#tree-fruit').position();
+    console.log(yy);
+    
+    
 
-    //jump_menu('#initial-jump'); //notworking
+    
     
     window.location = "#home-menu";
 });
