@@ -42,6 +42,11 @@ app.use('/users', users);
 app.get('/login', function(req, res, next) {
   res.render('login');
 });
+
+app.get('/register', function(req,res,next){
+  res.render('regist');
+})
+
 passport.serializeUser(function(user, done) {
   done(null, user);
 });
