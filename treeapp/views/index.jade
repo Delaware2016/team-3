@@ -1,18 +1,40 @@
 extends layout
 
 block content
-  #tree-container
-    .grass
-    .tree-base
-  // TREE CONTAINER END
+  #tree-wrap
+    #tree-container
+      .grass
+      .tree-base
+      .modal.fade(tabindex='-1', role='dialog')
+        .modal-dialog(role='document')
+          .modal-content
+            .modal-header
+              button.close(type='button', data-dismiss='modal', aria-label='Close')
+                span(aria-hidden='true') ×
+              h4.modal-title
+                span#offernum math
+            .modal-body
+            .modal-footer
+              button.btn.btn-default(type='button', data-dismiss='modal') Close
+              button.btn.btn-primary(type='button') Redeem
+          // /.modal-content
+        // /.modal-dialog
+      // /.modal
+    // TREE CONTAINER END
+  #shop-link
+  #shop-link2 shop
+  #home-menu
   #garden-menu
-    a(href='link to advocacy')
-      #advocacy
-        img(src='/images/bird.png')
-    a(href='link to volunteer')
-      #volunteer
-        img(src='/images/watering-can.png')
-    a(href='link to donate')
-      #donate
-        img(src='/images/soil.jpg')
-  script(src='/javascripts/script.js')
+    #icon-container
+      a(href='link to advocacy')
+        #advocacy
+          img(src='treeapp/public/images/bird.png')
+      a(href='link to volunteer')
+        #volunteer
+          img(src='treeapp/public/images/watering-can.png')
+      a(href='link to donate')
+        #donate
+          img(src='treeapp/public/images/soil.png')
+    #profile-bar
+      p name picture progress notifications settings etc
+  script(src='treeapp/public/javascripts/script.js')
