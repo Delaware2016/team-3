@@ -21,8 +21,9 @@ block content
         // /.modal-dialog
       // /.modal
     // TREE CONTAINER END
-  #shop-link
-  #shop-link2 shop
+  a(href='shoplink')
+    #shop-link
+    #shop-link2 shop
   #home-menu
   #garden-menu
     #icon-container
@@ -36,6 +37,9 @@ block content
         #donate
           img(src='/images/soil.png')
     #profile-bar
-      p name picture progress notifications settings etc
+        #profile-pic
+            img(src='/images/profile.jpg')
+        span#profile-name name
+        span#profile-points POINTS: points here 
   script(src='/javascripts/script.js')
   script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', integrity='sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa', crossorigin='anonymous')
