@@ -131,7 +131,7 @@ body{
     z-index: 0;
     position: fixed;
     top: 20px;
-    right: 10px;
+    right: 0px;
     text-align: center;
     background-image: url("../images/sun.png");
     background-position: center;
@@ -153,7 +153,7 @@ body{
     z-index: 4;
     position: fixed;
     top: 20px;
-    right: 10px;
+    right: 0px;
     text-align: center;
     line-height: 100px;
 
@@ -172,6 +172,13 @@ body{
     }
 }
 
+
+#profile-bar{
+    width: 25%;
+    
+    border-radius: 50%;
+    overflow: hidden;
+}
 
 
 @media (min-width: 700px){
