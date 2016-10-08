@@ -27,12 +27,13 @@ var Tree = function(height){ //Tree class with height that changes height/adds l
 
 }
 
-var Fruit = function(type, id, color, left, bottom){
+var Fruit = function(type, id, color, left, bottom, text){
     this.type = type;
     this.id = id;
     this.color = color;
     this.left = left;
     this.bottom = bottom;
+    this.text = text;
 }
 
 
@@ -113,8 +114,18 @@ var draw_fruit = function(fruit){
     var $tree_fruit = document.createElement('div'); 
     $tree_fruit.className = 'tree-fruit';
     
+    var $modal = $('.modal');
+    
+    //$('.tree-fruit').attr('data-toggle', 'modal');
+    //$('.tree-fruit').attr('data-target', '#myModal');
+    
+    
     $tree_fruit.addEventListener("click", function(){
-        alert('s');
+        //alert('s');
+        $modal.modal('show');
+        $('#offernum').html(fruit.type + ' ' + fruit.id);
+        $('.modal-body').html(fruit.text);
+        console.log(fruit.type);
     });
     
    
@@ -154,7 +165,7 @@ var create_fruit_list = function(number_fruit, tree, tree_base_height){
         var color = "rgb("+ rchan_rand +','+ gchan_rand +',' + bchan_rand + ')';
         
         
-        var f = new Fruit('coupon',id, color, left, bot)
+        var f = new Fruit('coupon',id, color, left, bot, "10% off your order at BurgerTown");
         
         fruit_arr.push(f);
         
@@ -189,7 +200,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     //draw_fruit(100, mytree);
     create_fruit_list(10, mytree, 100);
     
-    var arrf = new Array(new Fruit('coupon', 5, 'rgb(50,50,50)', 200, 500)); // test array
+    var arrf = new Array(new Fruit('coupon', 5, 'rgb(50,50,50)', 200, 500, 'f')); // test array
     
     draw_fruit_on_tree(fruit_arr);
    
@@ -200,7 +211,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     var yy = $('#tree-fruit').position();
     //console.log(yy);
     
-    
+    //$('#offernum').html('cat');
 
     
     
