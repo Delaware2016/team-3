@@ -1,0 +1,64 @@
+form
+  link(rel='stylesheet', href='https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css')
+  link(rel='stylesheet', href='stylesheets/donations_style.css')
+  script(src='https://code.jquery.com/jquery-1.11.3.min.js')
+  script(src='https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js')
+
+  label
+    | $5 can provide one book
+    // <!-- Originally from http://pngimg.com--!>
+    img.icon(src='images/book.png', alt='book icon')
+    div(align='right')
+      | 100
+      img.icon(src='images/gold_coin.png', alt='gold coin icon')
+    input#select_5.button(type='radio', name='donation', onclick='expandInput()')
+    br
+  label
+    | $50 can provide 100 books
+    img.icon(src='images/book.png', alt='book icon')
+    div(align='right')
+      | 2000
+      img.icon(src='images/gold_coin.png', alt='gold coin icon')
+    input#select_10(type='radio', name='donation', onclick='expandInput()')
+    br
+  label
+    | $100 can provide 200 books
+    img.icon(src='images/book.png', alt='book icon')
+    div(align='right')
+      | 5000
+      img.icon(src='images/gold_coin.png', alt='gold coin icon')
+    input#select_20(type='radio', name='donation', onclick='expandInput()')
+    br
+  label
+    | Other
+    img.icon(src='images/book.png', alt='book icon')
+    input#other(type='radio', name='donation', onclick='expandInput()')
+    br
+  #number_div(style='display:none;')
+    label
+      | Amount in ($ USD)
+      input#variable_input(type='number', name='variable_input', min='1', onkeyup='onKeyUp()')
+    label#variable_amount_of_books
+  center
+    // <!-- Insert post request to server--!>
+    input#submit_button(type='submit', value='submit', disabled='true')
+script.
+  function expandInput(){
+  if(document.getElementById("other").checked){
+  document.getElementById("number_div").style.display = "initial";
+  document.getElementById("variable_input").value = "";
+  document.getElementById("variable_amount_of_books").innerHTML = "";
+  }
+  else{
+  document.getElementById("number_div").style.display = "none";
+  }
+  document.getElementById("submit_button").setAttribute('disabled','false');
+  }
+  var pref = "Your contribution can provide ";
+  function onKeyUp(){
+  var num = document.getElementById("variable_input").value;
+  if(num>5)
+  document.getElementById("variable_amount_of_books").innerHTML = pref + Math.floor(num/5) + " books to children accross Delaware";
+  else
+  document.getElementById("variable_amount_of_books").innerHTML = "";
+  }
