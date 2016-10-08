@@ -11,6 +11,8 @@ var connection = mysql.createConnection({
     password : process.env.PW,
     database : 'cfg'
 });
+var passport = require('passport')
+  , FacebookStrategy = require('passport-facebook').Strategy;
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -40,8 +42,6 @@ app.use('/users', users);
 app.get('/login', function(req, res, next) {
   res.render('login');
 });
-var passport = require('passport')
-  , FacebookStrategy = require('passport-facebook').Strategy;
 
 passport.use(new FacebookStrategy({
     clientID: "1590000834638958",
