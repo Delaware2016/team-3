@@ -39,7 +39,7 @@ form
       input#variable_input(type='number', name='variable_input', min='1', onkeyup='onKeyUp()')
     label#variable_amount_of_books
   center
-    input#submit_button(type='submit', value='submit', formmethod="POST", formaction="/donate")
+    input#submit_button(type='submit', value='submit', formmethod="POST", formaction="/donate", onclick="redir()")
 script.
   function expandInput(){
     if(document.getElementById("other").checked){
@@ -50,6 +50,9 @@ script.
     else{
     document.getElementById("number_div").style.display = "none";
     }
+  }
+  function redir(){
+    document.location = "/";
   }
   var pref = "Your contribution can provide ";
   function onKeyUp(){
