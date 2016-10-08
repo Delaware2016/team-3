@@ -46,7 +46,11 @@ passport.use(new FacebookStrategy({
   },
   function(accessToken, refreshToken, profile, done) {
     console.log(profile);
-    connection.query('INSERT INTO users ')
+    connection.query('INSERT INTO users (username) VALUES (\''+profile.displayName+'\')');
+    connection.query('SELECT * FROM users WHERE username=\''+profile.displayName+'\';',function(err, results){
+      if(err)console.log(err);
+      done(null,results);
+    });
   }
 ));
 // Redirect the user to Facebook for authentication.  When complete,
