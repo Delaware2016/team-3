@@ -1,4 +1,4 @@
-form(method="POST" action="/donate")
+form
   link(rel='stylesheet', href='https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css')
   link(rel='stylesheet', href='stylesheets/donations_style.css')
   script(src='https://code.jquery.com/jquery-1.11.3.min.js')
@@ -10,7 +10,7 @@ form(method="POST" action="/donate")
     div(align='right')
       | 100
       img.icon(src='images/gold_coin.png', alt='gold coin icon')
-    input#select_5.button(type='radio', name='donation', onclick='expandInput()')
+    input#select_5.button(type='radio', name='one', onclick='expandInput()')
     br
   label
     | $50 can provide 100 books
@@ -18,7 +18,7 @@ form(method="POST" action="/donate")
     div(align='right')
       | 2000
       img.icon(src='images/gold_coin.png', alt='gold coin icon')
-    input#select_10(type='radio', name='donation', onclick='expandInput()')
+    input#select_10(type='radio', name='two', onclick='expandInput()')
     br
   label
     | $100 can provide 200 books
@@ -26,12 +26,12 @@ form(method="POST" action="/donate")
     div(align='right')
       | 5000
       img.icon(src='images/gold_coin.png', alt='gold coin icon')
-    input#select_20(type='radio', name='donation', onclick='expandInput()')
+    input#select_20(type='radio', name='three', onclick='expandInput()')
     br
   label
     | Other
     img.icon(src='images/book.png', alt='book icon')
-    input#other(type='radio', name='donation', onclick='expandInput()')
+    input#other(type='radio', name='other', onclick='expandInput()')
     br
   #number_div(style='display:none;')
     label
