@@ -55,6 +55,11 @@ app.get('/social', function(req,res,next){
   res.render('social');
 });
 
+app.post('/addPoints', function(req,res,next){
+  console.log(req.user);
+  connection.query('UPDATE users SET points = points+'+req.body.points+' WHERE username=\''+req.user+'\';');
+});
+
 passport.serializeUser(function(user, done) {
   done(null, user);
 });
