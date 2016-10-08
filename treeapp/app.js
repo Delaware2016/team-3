@@ -45,10 +45,8 @@ passport.use(new FacebookStrategy({
     callbackURL: "http://ec2-54-210-156-211.compute-1.amazonaws.com/auth/facebook/callback"
   },
   function(accessToken, refreshToken, profile, done) {
-    User.findOrCreate(..., function(err, user) {
-      if (err) { return done(err); }
-      done(null, user);
-    });
+    console.log(profile);
+    connection.query('INSERT INTO users ')
   }
 ));
 // Redirect the user to Facebook for authentication.  When complete,
