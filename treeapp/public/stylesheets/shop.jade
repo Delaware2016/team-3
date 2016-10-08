@@ -1,0 +1,42 @@
+extends layout
+block content  
+  head
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', type='text/css', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    // Website CSS style
+    link(rel='stylesheet', type='text/css', href='spreadsheets/shop.css')
+    // Website Font style
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css')
+    // Google Fonts
+    link(href='https://fonts.googleapis.com/css?family=Passion+One', rel='stylesheet', type='text/css')
+    link(href='https://fonts.googleapis.com/css?family=Oxygen', rel='stylesheet', type='text/css')
+    title Admin
+    #fb-root
+    .container
+      .row.main
+        .panel-heading
+          .panel-title.text-center(onclick="location.href='/';")
+            img.tree(src='images/tree.png')
+        .main-login.main-center.text-center
+          span.options You have 300 points.
+          .form-group(style='padding: 1.5em')
+            button.btn.btn-primary.btn-lg.btn-block.login-button.options(onclick='showStuff()', type='button') Bird in the tree -- 100 points
+            button.btn.btn-primary.btn-lg.btn-block.login-button.options(onclick='showStuff()', type='button') A swing -- 150 points
+            button.btn.btn-primary.btn-lg.btn-block.login-button.options(onclick='showStuff()', type='button') Deer Grazing -- 200 points
+            button.btn.btn-primary.btn-lg.btn-block.login-button.options(onclick='showStuff()', type='button') Fox den -- 250 points
+          .choice.main-login.main-center(style=' max-width: 250px; overflow:auto;')
+            button.btn.btn-primary.btn-lg.btn-block.login-button.pull-right(onclick='switchback()', type='button', style='width: 25%;	padding: 6px 12px;	margin-left:2px') No
+            button.btn.btn-primary.btn-lg.btn-block.login-button.pull-right(onclick="location.href='/';", type='button', style='width: 25%;	padding: 6px 12px;	') Yes
+            .main-login.main-center.pull-left(style='overflow:auto;') Are you sure?
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+    script(type='text/javascript').
+      $('.choice').hide();
+      function showStuff() {
+      $('.options').hide();
+      $('.choice').show();
+      }
+      function switchback(){
+      $('.options').show();
+      $('.choice').hide();
+      }
