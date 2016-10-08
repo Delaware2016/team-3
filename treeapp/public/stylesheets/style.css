@@ -109,6 +109,8 @@ body{
     
     width: 80px;
     display: inline-block;
+    margin-right: 10px;
+    
     
   
     
@@ -204,6 +206,7 @@ body{
 }
 
 #profile-points{
+    margin-right: 50px;
     
     z-index: 6000;
 }
