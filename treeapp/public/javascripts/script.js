@@ -16,7 +16,7 @@ var $contain_width = ($('#tree-container').width())/2;
 var $tree_bod_width= $('.tree-base').width()/2;
 
 
-
+var fruit_arr = new Array();
 
 
 
@@ -27,9 +27,12 @@ var Tree = function(height){ //Tree class with height that changes height/adds l
 
 }
 
-var Fruit = function(type, id, color){
+var Fruit = function(type, id, color, left, bottom){
     this.type = type;
     this.id = id;
+    this.color = color;
+    this.left = left;
+    this.bottom = bottom;
 }
 
 
@@ -93,25 +96,74 @@ var draw_tree = function(height){
 
 }
 
-//draw single fruit
-var draw_fruit = function(tree_base_height, tree){
+//draw fruit loop
+var draw_fruit_on_tree = function(fruit_list){
+    for(var i = 0; i < fruit_list.length; i++){
+        
+        draw_fruit(fruit_list[i]);
+    }
+    
+    
+    
+}
+
+//draw single fruit 
+var draw_fruit = function(fruit){
     
     var $tree_fruit = document.createElement('div'); 
     $tree_fruit.className = 'tree-fruit';
     
+    $tree_fruit.addEventListener("click", function(){
+        alert('s');
+    });
     
+   
 
-    //($contain_width - $tree_bod_width - $tree_bod_width)+ 'px'; 
-    //($contain_width + $tree_bod_width + $tree_bod_width)+ 'px'; 
+    $tree_fruit.style.left = fruit.left + 'px';               
 
-    $tree_fruit.style.left = ($contain_width + $tree_bod_width + $tree_bod_width)+ 'px';               
-
-    $tree_fruit.style.bottom = tree.height*100 + 'px';
-        //tree_base_height + 'px'; //height + px '100px'
+    $tree_fruit.style.bottom =  fruit.bottom + 'px';
+        
+ 
+    $tree_fruit.style.color = fruit.color;
     
-    Math.floor((Math.random() * 10) + 1);
 
     $tree_container.appendChild($tree_fruit);
+}
+
+
+//create fruit list. w hy did i do this
+
+var create_fruit_list = function(number_fruit, tree, tree_base_height){
+    var tree_left_bound = ($contain_width - $tree_bod_width - $tree_bod_width); 
+    var tree_right_bound = ($contain_width -$tree_bod_width); // for leeway because dont want to effort
+    var tree_top_bound = tree.height*100;
+    var tree_bot_bound = tree_base_height; //height + px '100px'
+    
+    
+    
+    for(i=0; i<number_fruit; i++){
+        
+        
+        var left = Math.floor((Math.random() * tree_right_bound) + tree_left_bound);
+        var bot = Math.floor((Math.random() * tree_top_bound) + tree_bot_bound);
+        
+        var id = Math.floor((Math.random() * 10) + 1);
+        var rchan_rand = Math.floor((Math.random() * 255) + 0);
+        var gchan_rand = Math.floor((Math.random() * 255) + 0);
+        var bchan_rand = Math.floor((Math.random() * 255) + 0);
+        var color = "rgb("+ rchan_rand +','+ gchan_rand +',' + bchan_rand + ')';
+        
+        
+        var f = new Fruit('coupon',id, color, left, bot)
+        
+        fruit_arr.push(f);
+        
+        
+    }
+   
+    
+          
+    
 }
 
 
@@ -123,6 +175,8 @@ var draw_fruit = function(tree_base_height, tree){
 var mytree = new Tree(5); 
 
 
+
+
 // dom load
 document.addEventListener("DOMContentLoaded", function(event) { 
 
@@ -132,13 +186,19 @@ document.addEventListener("DOMContentLoaded", function(event) {
     make_tree(mytree); // make da tree
     grow_container(mytree); //expands view when tree grows
     
-    draw_fruit(100, mytree);
+    //draw_fruit(100, mytree);
+    create_fruit_list(10, mytree, 100);
+    
+    var arrf = new Array(new Fruit('coupon', 5, 'rgb(50,50,50)', 200, 500)); // test array
+    
+    draw_fruit_on_tree(fruit_arr);
+   
 
 
     var xx = $('#tree-container').position(); // just for testing.
-    console.log(xx);
+    //console.log(xx);
     var yy = $('#tree-fruit').position();
-    console.log(yy);
+    //console.log(yy);
     
     
 
