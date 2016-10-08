@@ -83,7 +83,7 @@ function init() {
 
   }
 
-  var image = 'http://ec2-54-210-156-211.compute-1.amazonaws.com:3000/images/farmer.png';
+  var image = 'http://ec2-54-210-156-211.compute-1.amazonaws.com:3000/images/Farmer.png';
 
 
 
@@ -106,22 +106,18 @@ function init() {
 }
 
 
-
 function extrapolateLoc() {
-
   for (var i=0; i<markers.length; i++) {
-
-      if (!GeoMarker.getBounds().contains(markers[i].getPosition())) { // horribly inefficient. Really REALLY inefficient.
-
-              alert('LOLOLOLOL');
-
+      if (GeoMarker.getBounds().contains(markers[i].getPosition())) { // horribly inefficient. Really REALLY inefficient.
+        toggleBounceOn(i);
+        //markers[i].setAnimation(google.maps.Animation.BOUNCE);
+        break;
+      } else {
+        if (markers[i].getAnimation() !== null) {
+          toggleBounceOff(i);
       }
-
+    }
   }
-
-
-
-}
 
 
 
@@ -165,10 +161,7 @@ function makeMarker(location) {
 
   var marker = new google.maps.Marker(markerOptions);
 
-  marker.addListener('click', toggleBounceInfo);
-
-  marker.setAnimation(google.maps.Animation.BOUNCE);
-
+    marker.addListener('click', toggleInfo);
   markers.push(marker);
 
 }
@@ -189,24 +182,21 @@ function getClosestMarkers() {
 
 }
 
-
-
-function toggleBounceInfo() {
-
-  window.alert(GeoMarker.getPosition());
-
+function toggleInfo() {
+  //window.alert(GeoMarker.getPosition());
   infowindow.open(map, this);
+}
 
-  if (this.getAnimation() !== null) {
+function toggleBounceOn(i) {
+  //if (markers[i].getAnimation() !== null) {
+    //markers[i].setAnimation(null);
+  //} else {
+     markers[i].setAnimation(google.maps.Animation.BOUNCE);
+  //}
+}
 
-    this.setAnimation(null);
-
-  } else {
-
-     this.setAnimation(google.maps.Animation.BOUNCE);
-
-  }
-
+function toggleBounceOff(i) {
+  markers[i].setAnimation(null);
 }
 
 
