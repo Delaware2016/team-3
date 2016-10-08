@@ -54,7 +54,7 @@ var make_tree = function(tree){
     while(count < tree.height){
         count++;
         
-        draw_tree(count*100)
+        draw_tree(count*110)
     }
 }
 
@@ -75,7 +75,8 @@ function jump_menu(h){
 }
 
 //DRAW FUNCTIONS
-
+var $tree_top = document.createElement('div'); //creates tree layer triangle
+$tree_top.className = 'tree-top';
 
 //draw tree
 //but really just a single tree layer
@@ -91,11 +92,12 @@ var draw_tree = function(height){
     var $tree_top = document.createElement('div'); //creates tree layer triangle
     $tree_top.className = 'tree-top';
 
+    console.log($('.tree-top').width() + ' ' + $contain_width);
 
 
-    $tree_top.style.left = ($contain_width - $tree_bod_width - $tree_bod_width - $tree_bod_width/2)+ 'px';   //maybe make better values someday...            
+    $tree_top.style.left = ($contain_width - 250) + 'px';   //maybe make better values someday...     // $tree_bod_width - $tree_bod_width - $tree_bod_width/2       
 
-    $tree_top.style.bottom = height + 'px'; //height + px '100px'
+    $tree_top.style.bottom = height - 80 + 'px'; //height + px '100px'
     $tree_top.style.zIndex= '3';
 
     $tree_container.appendChild($tree_top);
@@ -142,7 +144,8 @@ var draw_fruit = function(fruit){
         
  
     $tree_fruit.style.backgroundColor = fruit.color;
-    console.log(fruit.color);
+    //console.log(fruit.color);
+    $tree_fruit.style.border = "1px solid white";
     
 
     $tree_container.appendChild($tree_fruit);
@@ -167,8 +170,8 @@ var create_fruit_list = function(number_fruit, tree, tree_base_height){
         
         var id = Math.floor((Math.random() * 10) + 1);
         var rchan_rand = Math.floor((Math.random() * 255) + 0);
-        var gchan_rand = Math.floor((Math.random() * 200) + 0);
-        var bchan_rand = Math.floor((Math.random() * 255) + 0);
+        var gchan_rand = Math.floor((Math.random() * 100) + 0);
+        var bchan_rand = Math.floor((Math.random() * 100) + 0);
         var color = "rgb("+ rchan_rand +','+ gchan_rand +',' + bchan_rand + ')';
         
         
