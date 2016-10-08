@@ -42,7 +42,7 @@ var Fruit = function(type, id, color, left, bottom, text){
 
 //CHANGE CONTAINER SIZE //might not need
 var grow_container = function(tree){
-    $('#tree-container').height(tree.height * 200); //150 is ration
+    $('#tree-container').height(tree.height * 250); //150 is ration
     
  
 }
