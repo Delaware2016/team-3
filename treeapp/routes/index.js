@@ -20,8 +20,8 @@ router.get('/', function(req, res, next) {
       if(err)console.log(err);
       console.log(results);
       req.user = results;
+      res.render('index', { title: 'Express', user: req.user[0] });
   });
-  res.render('index', { title: 'Express', user: req.user[0] });
 });
 
 module.exports = router;
