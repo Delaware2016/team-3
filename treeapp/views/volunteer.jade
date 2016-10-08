@@ -4,11 +4,12 @@ block content
     //- link(rel='stylesheet', type='text/css', href='css/track2d.css')
     script(src='javascripts/data.js')
     script(src='javascripts/content.js')
-    script(src='http://www.google.com/jsapi')
+    script(src='http://www.google.com/jsapi?key=AIzaSyBm4pX8aA16wwNdzhL4pr-u7TVicKUsl2Q')
     script(type='text/javascript').
         google.load("jquery", "1");
-    script(type='text/javascript').
+    //- script(type='text/javascript').
         google.load("maps", "3", {other_params: "sensor=false;key=AIzaSyBm4pX8aA16wwNdzhL4pr-u7TVicKUsl2Q",key:"AIzaSyBm4pX8aA16wwNdzhL4pr-u7TVicKUsl2Q"});
+    script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBm4pX8aA16wwNdzhL4pr-u7TVicKUsl2Q&callback=initMap")
     script(src='javascripts/raphaelboth.js')
     script(src='javascripts/cloudoverlay.js')
     script(src='javascripts/googMapsStyle.js')
