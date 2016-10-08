@@ -19,7 +19,27 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/',function(req,res,next){
+    var NodeGeocoder = require('node-geocoder');
 
+    var options = {
+        provider: 'google',
+
+        // Optional depending on the providers
+        httpAdapter: 'https', // Default
+        apiKey: 'AIzaSyBm4pX8aA16wwNdzhL4pr-u7TVicKUsl2Q', // for Mapquest, OpenCage, Google Premier
+        formatter: null         // 'gpx', 'string', ...
+    };
+
+    var geocoder = NodeGeocoder(options);
+
+    var location = req.body.location;
+    var description = req.body.description;
+    var date = req.body.description;
+
+    // Using callback
+    geocoder.geocode(location, function(err, res) {
+        console.log(res);
+    });
 })
 
 router.get('/add',function(req,res,next){
