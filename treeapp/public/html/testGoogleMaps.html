@@ -14,6 +14,8 @@
         height: 100%;
       }
     </style>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDPrjvAY50tdy_GRG-zxkfF-uo17RgAsSo&callback=initMap">
+    </script>
   </head>
   <body>
     <div id="map"></div>
@@ -21,14 +23,12 @@
     var map; 
       function initMap() {
           infowindow = new google.maps.InfoWindow({
-          content: contentString
         });
         var myLatLng = {lat: 39.783229999999996, lng: -75.54888319999999};
 
         map = new google.maps.Map(document.getElementById('map'), {
           zoom: 16,
           mapTypeID: 'roadmap',
-          styles: googMapsStyle,
           center: myLatLng
         });
 
@@ -39,17 +39,11 @@
         });
       }
     </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDPrjvAY50tdy_GRG-zxkfF-uo17RgAsSo&callback=initMap">
-    </script>
-    <script type="text/javascript"> 
-google.load("maps", "3", {other_params:"sensor=false"});
-</script>
-<script src="treeapp/public/javascripts/data.js"></script> 
-<script src="treeapp/public/javascripts/content.js"></script>
-<script src="treeapp/public/javascripts/raphaelboth.js"></script> 
-<script src="treeapp/public/javascripts/cloudoverlay.js"></script>
-<script src="treeapp/public/javascripts/googMapsStyle.js"></script>
-<script src="treeapp/public/javascripts/geolocation-marker.js"></script>
+<script src="../javascripts/data.js"></script> 
+<script src="../javascripts/content.js"></script>
+<script src="../javascripts/raphaelboth.js"></script> 
+<script src="../javascripts/cloudoverlay.js"></script>
+<script src="../javascripts/googMapsStyle.js"></script>
+<script src="../javascripts/geolocation-marker.js"></script>
   </body>
 </html>
