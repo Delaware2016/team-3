@@ -2,6 +2,7 @@
 
 body{
     font-size: 3em;
+    font-family: "Helvetica", sans-serif;
 }
 /*--TREE CANVAS THING ---*/
 
@@ -173,11 +174,18 @@ body{
 }
 
 
-#profile-bar{
+#profile-pic{
     width: 25%;
+    position: absolute;
+    bottom: 10px;
     
     border-radius: 50%;
     overflow: hidden;
+    border: 5px skyblue solid;
+}
+
+#profile-name{
+    margin-right: 30px;
 }
 
 
