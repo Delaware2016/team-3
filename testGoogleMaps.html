@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Simple markers</title>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+
+      function initMap() {
+        var myLatLng = {lat: -25.363, lng: 131.044};
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: myLatLng
+        });
+
+        var marker = new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+          title: 'Hello World!'
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDPrjvAY50tdy_GRG-zxkfF-uo17RgAsSo&callback=initMap">
+    </script>
+    <script type="text/javascript"> 
+google.load("maps", "3", {other_params:"sensor=false"});
+</script>
+<script src="treeapp/public/javascripts/data.js"></script> 
+<script src="treeapp/public/javascripts/content.js"></script>
+<script type="text/javascript">google.load("jquery", "1");</script> 
+<script src="treeapp/public/javascripts/raphaelboth.js"></script> 
+<script src="treeapp/public/javascripts/cloudoverlay.js"></script>
+<script src="treeapp/public/javascripts/googMapsStyle.js"></script>
+<script src="treeapp/public/javascripts/geolocation-marker.js"></script>
+  </body>
+</html>
