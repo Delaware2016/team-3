@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+	<link rel="stylesheet" href="/Users/ThisMac/CodeForGoodApp/team-3/donations_style.css">
+	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <title>Donation page</title>
+</head>
+	<body>
+    	 <form>
+  			<label>$5 can provide one book
+  				<!-- Originally from http://pngimg.com--!> 
+  				<img class="icon" src="/Users/ThisMac/Pictures/book.png" alt="book icon" ></img>
+  				<div align="right">
+  				100
+  				<img class="icon" src="/Users/ThisMac/Pictures/gold_coin.png" alt="gold coin icon" ></img>
+  				</div>
+  				<input class="button" type="radio" name="donation" id="select_5" onclick="expandInput()"><br>
+  			</label>
+  			<label>$50 can provide 100 books
+  				<img class="icon" src="/Users/ThisMac/Pictures/book.png" alt="book icon" ></img>
+  				<div align="right">
+  				2000
+  				<img class="icon" src="/Users/ThisMac/Pictures/gold_coin.png" alt="gold coin icon" ></img>
+  				</div>
+  				<input type="radio" name="donation" id="select_10" onclick="expandInput()"><br>
+  			</label>
+  			<label>$100 can provide 200 books
+  				<img class="icon" src="/Users/ThisMac/Pictures/book.png" alt="book icon" ></img>
+  				<div align="right">
+  				5000
+  				<img class="icon" src="/Users/ThisMac/Pictures/gold_coin.png" alt="gold coin icon" ></img>
+  				</div>
+  				<input type="radio" name="donation" id="select_20" onclick="expandInput()"><br>
+  			</label>
+  			<label>Other
+  				<img class="icon" src="/Users/ThisMac/Pictures/book.png" alt="book icon" ></img>
+  				<input type="radio" name="donation" id="other" onclick="expandInput()"><br>
+  			</label>
+  			<div id = "number_div" style="display:none;">
+  			<label>Amount in ($ USD)<input type="number" id="variable_input" name="variable_input" min="1" onkeyup="onKeyUp()"></label>
+  			<label id="variable_amount_of_books"></label>
+  			</div>
+  			<center>
+  			<!-- Insert post request to server--!>
+  			<input id="submit_button" type="submit" value="submit" disabled="true"></input>
+  			</center>
+		</form>
+		<script>
+		function expandInput(){
+			if(document.getElementById("other").checked){
+				document.getElementById("number_div").style.display = "initial";
+				document.getElementById("variable_input").value = "";
+				document.getElementById("variable_amount_of_books").innerHTML = "";
+			}
+			else{
+				document.getElementById("number_div").style.display = "none";
+			}
+			document.getElementById("submit_button").setAttribute('disabled','false');
+		}
+		var pref = "Your contribution can provide ";
+		function onKeyUp(){
+			var num = document.getElementById("variable_input").value;
+			if(num>5)
+				document.getElementById("variable_amount_of_books").innerHTML = pref + Math.floor(num/5) + " books to children accross Delaware";
+			else
+				document.getElementById("variable_amount_of_books").innerHTML = "";
+		}
+		</script> 
+	</body>
+
+</html>
