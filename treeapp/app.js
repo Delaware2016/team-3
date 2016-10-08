@@ -47,6 +47,9 @@ app.get('/login', function(req, res, next) {
 app.get('/register', function(req,res,next){
   res.render('regist');
 })
+app.get('/volunteer',function(req,res,next){
+  res.render('volunteer');
+})
 
 app.get('/social', function(req,res,next){
   res.render('social');
