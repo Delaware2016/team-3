@@ -5,13 +5,13 @@ var locations = [
         "lng": "-75.569311"
     },
     {
-        "full_location": "",
-        "lat": "39.783855",
-        "lng": "-75.549027"
-    },
-    {
         "full_location": "Generic Event",
         "lat": "39.7391",
         "lng": "-75.5398"
+    },
+    {
+        "full_location": "",
+        "lat": "39.78322",
+        "lng": "-75.548883"
     }
 ]
