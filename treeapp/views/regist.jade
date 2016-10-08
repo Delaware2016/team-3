@@ -1,0 +1,55 @@
+extends layout
+block content
+  head
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', type='text/css', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    // Website CSS style
+    link(rel='stylesheet', type='text/css', href='/stylesheets/register2.css')
+    // Website Font style
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css')
+    // Google Fonts
+    link(href='https://fonts.googleapis.com/css?family=Passion+One', rel='stylesheet', type='text/css')
+    link(href='https://fonts.googleapis.com/css?family=Oxygen', rel='stylesheet', type='text/css')
+    title Admin
+    .container
+      .row.main
+        .panel-heading
+          .panel-title.text-center
+            img.myButton(src='http://198.100.47.134/images/uploads/logo2.png')
+            // <hr />
+        .main-login.main-center
+          form.form-horizontal(method='post', action='#')
+            .form-group
+              label.cols-sm-2.control-label(for='username') Username
+              .cols-sm-10
+                .input-group
+                  span.input-group-addon
+                    i.fa.fa-users.fa(aria-hidden='true')
+                  input#username.form-control(type='text', name='username', placeholder='Enter your Username')
+            .form-group
+              label.cols-sm-2.control-label(for='email') Your Email
+              .cols-sm-10
+                .input-group
+                  span.input-group-addon
+                    i.fa.fa-envelope.fa(aria-hidden='true')
+                  input#email.form-control(type='text', name='email', placeholder='Enter your Email')
+            .form-group
+              label.cols-sm-2.control-label(for='password') Password
+              .cols-sm-10
+                .input-group
+                  span.input-group-addon
+                    i.fa.fa-lock.fa-lg(aria-hidden='true')
+                  input#password.form-control(type='password', name='password', placeholder='Enter your Password')
+            .form-group
+              label.cols-sm-2.control-label(for='confirm') Confirm Password
+              .cols-sm-10
+                .input-group
+                  span.input-group-addon
+                    i.fa.fa-lock.fa-lg(aria-hidden='true')
+                  input#confirm.form-control(type='password', name='confirm', placeholder='Confirm your Password')
+            .form-group
+              button.btn.btn-primary.btn-lg.btn-block.login-button(type='button') Register
+            .login-register
+              a(href='index.php') Login
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
